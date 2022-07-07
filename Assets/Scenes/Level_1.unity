@@ -681,7 +681,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3993742294646917630, guid: 08a8b4f445a7e774d9bb61d7acf65ac2, type: 3}
       propertyPath: number
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3993742294646917630, guid: 08a8b4f445a7e774d9bb61d7acf65ac2, type: 3}
       propertyPath: myAction
@@ -1062,8 +1062,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 240936785556211903, guid: c7fab4fd037e4b3459c4d4faac17edf3, type: 3}
   ballsParent: {fileID: 30875188}
-  DeadZoneY: -2
   speed: 15
+  DeadZoneY: -2
+  FinishUiDelay: 4
 --- !u!114 &597227774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,7 +1077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904c266d582792e4da2137a22ed01255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreCount: 0
 --- !u!1001 &598008532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1800,7 +1800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d458a9097f73540a5123e07716df64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 994750977}
   offset: {x: 0, y: 12.04, z: -10.77}
 --- !u!54 &994750979
 Rigidbody:
@@ -3324,6 +3323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finishUI: {fileID: 1014498978}
+  finishDelay: 3
   nextLevel: {fileID: 102900000, guid: 49c4a9cddf2a9d2429dd963dffa71afe, type: 3}
   scoreText: {fileID: 891591742}
 --- !u!1 &1758074164

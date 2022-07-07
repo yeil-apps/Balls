@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2de3e00c7e1c434eb9bf6041db5395c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magneticForce: 0.04
+  magneticForce: 25
   PushPowerZ: 20
   PushPowerY: 50
   destroyEffect: {fileID: 885675566136745341, guid: 171acaa558092f845a1692487a899a7c, type: 3}

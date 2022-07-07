@@ -15,7 +15,6 @@ public class Ball : MonoBehaviour
     private BallsManager ballsManager;
     private Rigidbody rigidBody;
 
-
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -30,7 +29,16 @@ public class Ball : MonoBehaviour
    
     void FixedUpdate()
     {
+
         rigidBody.velocity = new Vector3(ballDirection.x * speed, rigidBody.velocity.y, ballDirection.z * speed);
+        var magneticVector = ballsManager.GetMainBallPos();
+        var distance = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(magneticVector.x, 0, magneticVector.z));
+        if (magneticVector != null && Mathf.Abs(transform.position.y - magneticVector.y) < 1.2f && distance > 1.2f)
+        {
+            magneticVector = new Vector3(magneticVector.x - transform.position.x, 0, magneticVector.z - transform.position.z);
+            rigidBody.AddForce(magneticVector.normalized * magneticForce, ForceMode.Acceleration);
+        }
+
     }
 
     private void Update()
@@ -42,10 +50,6 @@ public class Ball : MonoBehaviour
     public void ChangeBallDirection()
     {
         ballDirection = Vector3.forward + touchControll.MoveDirection;
-
-        var magneticVector = ballsManager.GetMainBallPos();
-        if (magneticVector!=null)
-            ballDirection += new Vector3(magneticVector.x - transform.position.x, 0, 0) * magneticForce;
     }
 
     public void ChangeBallSpeed()

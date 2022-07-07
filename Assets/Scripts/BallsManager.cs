@@ -32,7 +32,7 @@ public class BallsManager : MonoBehaviour
 
     public void RemoveBalls(int count)
     {
-        if (ballsParent.transform.childCount < count)
+        if (ballsParent.transform.childCount <= count)
             count = ballsParent.transform.childCount - 1;
 
         if (count > 0)
